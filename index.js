@@ -14,7 +14,7 @@ const mongoURI = process.env.MONGO_URL; // Make sure this matches your .env
 app.use(express.json()); // Allows JSON body parsing
 app.use(
   cors({
-    origin: "http://localhost:5173", // Frontend origin (Vite dev server)
+    origin: process.env.FRONTEND_URL, // Frontend origin (Vite dev server)
     credentials: true,              // Allow cookies / auth headers
   })
 );
